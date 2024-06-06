@@ -70,7 +70,7 @@ The Stochastic Heun method is an extension of the Heun method for ODEs. It provi
 
 1. Predictor step: $$X_{t+\Delta t}^{*} = X_t + \mu(X_t, t) \Delta t + \sigma(X_t, t) \Delta W_t$$
    
-2. Corrector step: $$X_{t+\Delta t} = X_t + \frac{1}{2}  \left(\mu(X_t, t) + \mu(X_{t+\Delta t}^{*}, t+\Delta t)\right)  \Delta t + \frac{1}{2} \left( \sigma(X_t, t) + \sigma(X_{t+\Delta t}^{*}, t+\Delta t) \right) \Delta W_t$$
+2. Corrector step: $$X_{t+\Delta t} = X_t + \frac{1}{2}  \left(\mu(X_t, t) + \mu(X_{t+\Delta t}^{*}, t+\Delta t)\right)  \Delta t + \frac{1}{2} \left( \sigma(X_t, t) + \sigma(X_{t+\Delta t}^{\ast}, t+\Delta t) \right) \Delta W_t$$
 
 ### Adaptive Methods
 
