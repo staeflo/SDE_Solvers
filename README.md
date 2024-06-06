@@ -11,14 +11,14 @@ A general form of an SDE is given by:
 $$ dX_t = \mu(X_t, t) dt + \sigma(X_t, t) dW_t $$
 
 where:
-- \( X_t \) is the state variable at time \( t \).
-- \( \mu(X_t, t) \) is the drift coefficient, representing the deterministic part of the equation.
-- \( \sigma(X_t, t) \) is the diffusion coefficient, representing the stochastic part of the equation.
-- \( W_t \) is a Wiener process or Brownian motion.
+- $ X_t $ is the state variable at time $ t $.
+- $ \mu(X_t, t) $ is the drift coefficient, representing the deterministic part of the equation.
+- $ \sigma(X_t, t) $ is the diffusion coefficient, representing the stochastic part of the equation.
+- $ W_t $ is a Wiener process or Brownian motion.
 
 In this equation:
-- The drift term \( \mu(X_t, t) dt \) describes the average rate of change of \( X_t \).
-- The diffusion term \( \sigma(X_t, t) dW_t \) introduces randomness into the system, with \( dW_t \) representing an increment of a Wiener process.
+- The drift term $ \mu(X_t, t) dt $ describes the average rate of change of $ X_t $.
+- The diffusion term $ \sigma(X_t, t) dW_t $ introduces randomness into the system, with $ dW_t $ representing an increment of a Wiener process.
 
 ## Numerical Solvers for SDEs
 
@@ -34,9 +34,9 @@ The Euler-Maruyama method is a straightforward extension of the Euler method for
 
 **Formula:**
 
-\[ X_{t+\Delta t} = X_t + \mu(X_t, t) \Delta t + \sigma(X_t, t) \Delta W_t \]
+$$ X_{t+\Delta t} = X_t + \mu(X_t, t) \Delta t + \sigma(X_t, t) \Delta W_t $$
 
-where \( \Delta W_t \sim \mathcal{N}(0, \Delta t) \).
+where $ \Delta W_t \sim \mathcal{N}(0, \Delta t) $.
 
 ### Milstein Method
 
@@ -48,7 +48,7 @@ The Milstein method improves upon the Euler-Maruyama method by adding a correcti
 
 **Formula:**
 
-\[ X_{t+\Delta t} = X_t + \mu(X_t, t) \Delta t + \sigma(X_t, t) \Delta W_t + \frac{1}{2} \sigma(X_t, t) \frac{\partial \sigma(X_t, t)}{\partial X} \left( (\Delta W_t)^2 - \Delta t \right) \]
+$$ X_{t+\Delta t} = X_t + \mu(X_t, t) \Delta t + \sigma(X_t, t) \Delta W_t + \frac{1}{2} \sigma(X_t, t) \frac{\partial \sigma(X_t, t)}{\partial X} \left( (\Delta W_t)^2 - \Delta t \right) $$
 
 ### Runge-Kutta Methods for SDEs
 
@@ -69,10 +69,10 @@ The Stochastic Heun method is an extension of the Heun method for ODEs. It provi
 **Formula:**
 
 1. Predictor step:
-\[ X_{t+\Delta t}^{*} = X_t + \mu(X_t, t) \Delta t + \sigma(X_t, t) \Delta W_t \]
+$$ X_{t+\Delta t}^{*} = X_t + \mu(X_t, t) \Delta t + \sigma(X_t, t) \Delta W_t $$
 
 2. Corrector step:
-\[ X_{t+\Delta t} = X_t + \frac{1}{2} \left[ \mu(X_t, t) + \mu(X_{t+\Delta t}^{*}, t+\Delta t) \right] \Delta t + \frac{1}{2} \left[ \sigma(X_t, t) + \sigma(X_{t+\Delta t}^{*}, t+\Delta t) \right] \Delta W_t \]
+$$ X_{t+\Delta t} = X_t + \frac{1}{2} \left[ \mu(X_t, t) + \mu(X_{t+\Delta t}^{*}, t+\Delta t) \right] \Delta t + \frac{1}{2} \left[ \sigma(X_t, t) + \sigma(X_{t+\Delta t}^{*}, t+\Delta t) \right] \Delta W_t $$
 
 ### Adaptive Methods
 
