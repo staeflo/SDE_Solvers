@@ -11,7 +11,7 @@ A general form of an SDE is given by:
 $$ dX_t = \mu(X_t, t) dt + \sigma(X_t, t) dW_t $$
 
 where:
-- $X_t$ is the state variable at time $ t $.
+- $X_t$ is the state variable at time $t$.
 - $\mu(X_t, t)$ is the drift coefficient, representing the deterministic part of the equation.
 - $\sigma(X_t, t)$ is the diffusion coefficient, representing the stochastic part of the equation.
 - $W_t$ is a Wiener process or Brownian motion.
