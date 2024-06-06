@@ -8,7 +8,7 @@ Stochastic Differential Equations (SDEs) are differential equations in which one
 
 A general form of an SDE is given by:
 
-\[ dX_t = \mu(X_t, t) dt + \sigma(X_t, t) dW_t \]
+$$ dX_t = \mu(X_t, t) dt + \sigma(X_t, t) dW_t $$
 
 where:
 - \( X_t \) is the state variable at time \( t \).
