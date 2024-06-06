@@ -80,9 +80,48 @@ Adaptive methods adjust the time step size based on an estimate of the local err
 - Dynamically adjusts step size for efficiency.
 - Suitable for systems with varying rates of change.
 
+### Monte Carlo Methods
+
+Monte Carlo methods are used to approximate the solutions of SDEs by performing repeated random sampling. These methods are particularly useful for high-dimensional problems and for estimating statistical properties of the solution.
+
+**Key Points:**
+- Useful for high-dimensional problems.
+- Provides statistical estimates of the solution.
+
+**Approach:**
+- Generate a large number of sample paths of the SDE.
+- Compute the desired statistics (e.g., mean, variance) from the sample paths.
+
+### Feynman-Kac Formula
+
+The Feynman-Kac formula connects solutions of SDEs with solutions of certain partial differential equations (PDEs). It provides a way to solve PDEs by simulating the corresponding SDE.
+
+**Key Points:**
+- Links SDEs to PDEs.
+- Useful for solving certain types of PDEs using SDE simulations.
+
+**Formula:**
+
+If $u(x,t)$ is the solution to the PDE:
+
+$$ \frac{\partial u}{\partial t} + \mu(x,t) \frac{\partial u}{\partial x} + \frac{1}{2} \sigma^2(x,t) \frac{\partial^2 u}{\partial x^2} - r u = 0$$
+
+with terminal condition $u(x,T) = g(X_T)$, then $u(x,t)$ can be represented as:
+
+$$u(x,t) = \mathbb{E} \left[ e^{-\int_t^T r(X_s, s) \, ds} g(X_T) \mid X_t = x \right]$$
+
+where $X_t$ follows the SDE:
+
+$$dX_t = \mu(X_t, t) dt + \sigma(X_t, t) dW_t$$
+
+### Other Methods
+
+- **Implicit Methods**: These methods involve solving equations at each time step, often leading to more stable solutions for stiff SDEs.
+- **Split-Step Methods**: These methods separate the drift and diffusion steps, solving them alternately. They are useful for certain types of SDEs.
+- **Higher-Order Methods**: These include methods like the stochastic Taylor expansion, which provide higher-order accuracy at the cost of increased computational complexity.
+
 ## Conclusion
 
-Stochastic Differential Equations are powerful tools for modeling systems with inherent randomness. The choice of numerical solver depends on the specific requirements of the problem, including the desired accuracy and computational resources. The Euler-Maruyama method is a good starting point due to its simplicity, while methods like Milstein and Stochastic Heun offer better accuracy at the cost of increased computational complexity. Adaptive methods provide efficiency gains for complex problems with variable dynamics.
+Stochastic Differential Equations are powerful tools for modeling systems with inherent randomness. The choice of numerical solver depends on the specific requirements of the problem, including the desired accuracy and computational resources. The Euler-Maruyama method is a good starting point due to its simplicity, while methods like Milstein and Stochastic Heun offer better accuracy at the cost of increased computational complexity. Monte Carlo methods and the Feynman-Kac formula provide powerful techniques for high-dimensional problems and linking SDEs to PDEs, respectively. Adaptive methods provide efficiency gains for complex problems with variable dynamics.
 
 For detailed implementation and code examples, refer to the `examples` directory in this repository.
-
