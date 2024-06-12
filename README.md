@@ -80,7 +80,7 @@ Adaptive methods adjust the time step size based on an estimate of the local err
 - Dynamically adjusts step size for efficiency.
 - Suitable for systems with varying rates of change.
 
-### Monte Carlo Methods
+### Generalized Monte Carlo Methods
 
 Monte Carlo methods are used to approximate the solutions of SDEs by performing repeated random sampling. These methods are particularly useful for high-dimensional problems and for estimating statistical properties of the solution.
 
@@ -125,3 +125,10 @@ $$dX_t = \mu(X_t, t) dt + \sigma(X_t, t) dW_t$$
 Stochastic Differential Equations are powerful tools for modeling systems with inherent randomness. The choice of numerical solver depends on the specific requirements of the problem, including the desired accuracy and computational resources. The Euler-Maruyama method is a good starting point due to its simplicity, while methods like Milstein and Stochastic Heun offer better accuracy at the cost of increased computational complexity. Monte Carlo methods and the Feynman-Kac formula provide powerful techniques for high-dimensional problems and linking SDEs to PDEs, respectively. Adaptive methods provide efficiency gains for complex problems with variable dynamics.
 
 For detailed implementation and code examples, refer to the `examples` directory in this repository.
+
+## To Do:
+- Write a code that Monte-Carlo samples the stochastic processes to benchmark different methods and visualize examples
+- Compare this to the Feynman - Kac solution or (numerical) solution of the corresponding PDE
+
+-Write Dashboard that allows to choose different SDEs/PDEs and allows to look at solution. Potential application to BSE :D
+
