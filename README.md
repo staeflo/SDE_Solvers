@@ -60,7 +60,7 @@ Runge-Kutta methods adapted for SDEs provide higher-order accuracy and are suita
 
 ### Stochastic Heun Method
 
-The Stochastic Heun method is an extension of the Heun method for ODEs. It provides better accuracy than the Euler-Maruyama method by incorporating both predictor and corrector steps.
+The Stochastic Heun method is an extension of the Heun method for ODEs. It provides better accuracy than the Euler-Maruyama method by incorporating both predictor and corrector steps. It's equivalent to Runge-Kutta with one in between step. (RK2)
 
 **Key Points:**
 - Incorporates a predictor-corrector approach.
